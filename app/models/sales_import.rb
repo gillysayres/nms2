@@ -1,0 +1,2 @@
+class SalesImport < ApplicationRecord
+end

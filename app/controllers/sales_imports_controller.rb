@@ -8,3 +8,5 @@ class SalesImportsController < ApplicationController
     redirect_to sales_imports_path, notice: "#{count} new sales entries"
   end
 end
+
+# @ordertotals = Orderline.where(:id =>  @orderparts.id).sum("quantity * price")

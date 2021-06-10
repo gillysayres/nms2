@@ -20,5 +20,3 @@ class SalesImport < ApplicationRecord
   end
 
 end
-
-# user = SalesImport.where(email: row[:email]).first_or_initialize

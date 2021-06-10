@@ -10,6 +10,7 @@ class SalesImport < ApplicationRecord
     counter = 0
     CSV.foreach(file.path, col_sep: "\t", headers: true, header_converters: :symbol) do |row|
       sale = SalesImport.assign_from_row(row)
+      sale.total = sale.item_price * sale.purchase_count
       if sale.save
         counter += 1
       else

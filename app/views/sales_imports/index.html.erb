@@ -5,6 +5,7 @@
   </ul>
 </div>
 <h1>Sales Imports</h1>
+<p>$<%= @total_value %> </p>
 <div class="alignment">
   <div class="alignment2">
     <table id="table-head">
@@ -27,7 +28,7 @@
           <td><%= import.purchase_count %> </td>
           <td><%= import.merchant_address %> </td>
           <td><%= import.merchant_name %> </td>
-          <td><%=  %> </td>
+          <td><%= import.total %> </td>
         </tr>
         <% end %>
       </tbody>

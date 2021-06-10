@@ -1,6 +1,10 @@
 class SalesImportsController < ApplicationController
   def index
     @sales = SalesImport.paginate(:page => params[:page], per_page: 10)
+    @total_value = SalesImport.all.sum(&:total)
+    # SalesImport.all.each do |sale|
+    #   @total_value += sale.item_price * sale.purchase_count
+    # end
   end
 
   def import

@@ -1,6 +1,6 @@
 class SalesImportsController < ApplicationController
   def index
-    @sales = SalesImport.all
+    @sales = SalesImport.paginate(:page => params[:page], per_page: 10)
   end
 
   def import

@@ -1,10 +1,7 @@
 class SalesImportsController < ApplicationController
   def index
-    @sales = SalesImport.paginate(:page => params[:page], per_page: 10)
+    @sales = SalesImport.paginate(:page => params[:page], per_page: 7)
     @total_value = SalesImport.all.sum(&:total)
-    # SalesImport.all.each do |sale|
-    #   @total_value += sale.item_price * sale.purchase_count
-    # end
   end
 
   def import
@@ -12,5 +9,3 @@ class SalesImportsController < ApplicationController
     redirect_to sales_imports_path, notice: "#{count} new sales entries"
   end
 end
-
-# @ordertotals = Orderline.where(:id =>  @orderparts.id).sum("quantity * price")

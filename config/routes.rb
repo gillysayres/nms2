@@ -8,6 +8,4 @@ Rails.application.routes.draw do
       post :import
     end
   end
-
-  # POST /sales_imports/import
 end

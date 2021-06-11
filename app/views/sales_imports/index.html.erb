@@ -1,43 +1,40 @@
-<div class="navbar-1">
-  <img class="brand-logo" alt="Nuuvem" title="Nuuvem" src="//assets.nuuvem.com/assets/fe/images/nuuvem_logo-ab61ec645af3a6db7df0140d4792f31a.svg">
-  <ul>
-    <li>Sign Out</li>
-  </ul>
-</div>
+<%= render 'shared/navbar' %>
 <h1>Sales Imports</h1>
-<p>$<%= @total_value %> </p>
-<div class="alignment">
-  <div class="alignment2">
-    <table id="table-head">
-      <thead>
-        <th>Purchaser Name</th>
-        <th>Item Description</th>
-        <th>Item Price</th>
-        <th>Purchase Count</th>
-        <th>Merchant Address</th>
-        <th>Merchant Name</th>
-        <th>Total</th>
-      </thead>
-      <p><%= @sales_totals %> </p>
-      <tbody>
-        <% @sales.each do |import| %>
-        <tr>
-          <td><%= import.purchaser_name %> </td>
-          <td><%= import.item_description %> </td>
-          <td><%= import.item_price %> </td>
-          <td><%= import.purchase_count %> </td>
-          <td><%= import.merchant_address %> </td>
-          <td><%= import.merchant_name %> </td>
-          <td><%= import.total %> </td>
-        </tr>
-        <% end %>
-      </tbody>
-    </table>
+<div class="container">
+  <div class="total-value">
+    <p>Total Sales: $<%= @total_value %> </p>
+  </div>
+  <table id="table-head">
+    <thead>
+      <th>Purchaser Name</th>
+      <th>Item Description</th>
+      <th>Item Price</th>
+      <th>Purchase Count</th>
+      <th>Merchant Address</th>
+      <th>Merchant Name</th>
+      <th>Total</th>
+    </thead>
+    <p><%= @sales_totals %> </p>
+    <tbody>
+      <% @sales.each do |import| %>
+      <tr>
+        <td><%= import.purchaser_name %> </td>
+        <td><%= import.item_description %> </td>
+        <td><%= import.item_price %> </td>
+        <td><%= import.purchase_count %> </td>
+        <td><%= import.merchant_address %> </td>
+        <td><%= import.merchant_name %> </td>
+        <td><%= import.total %> </td>
+      </tr>
+      <% end %>
+    </tbody>
+  </table>
 
-    <%= form_tag import_sales_imports_path, :class => "form", multipart: true do %>
-      <%= file_field_tag :file, multiple: true %>
-      <%= submit_tag "Upload"%>
-    <% end %>
-    <%= will_paginate @sales, renderer: WillPaginate::ActionView::BootstrapLinkRenderer %>
+  <%= form_tag import_sales_imports_path, :class => "form", multipart: true do %>
+    <%= file_field_tag :file, multiple: true %>
+    <%= submit_tag "Upload"%>
+  <% end %>
+  <div class="paginate">
+    <%= will_paginate @sales, class: "paginate" %>
   </div>
 </div>

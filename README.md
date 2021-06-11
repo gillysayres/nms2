@@ -8,8 +8,9 @@
 - Rails: 6.1.3
 ### Gems used:
  - Devise;
- - Simple_form;
  - Rspec;
+ - Simple_form;
+ - Will_paginate;
 
 ## Tests
 Tests were implemented using the Rspec gem

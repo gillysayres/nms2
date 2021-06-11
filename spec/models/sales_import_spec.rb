@@ -1,9 +1,6 @@
 require "rails_helper"
 
 RSpec.describe SalesImport, type: :model do
-  # describe "associations" do
-  #   it { is_expected.to belong_to(:order) }
-  # end
 
   it 'creates a SalesImport entry' do
     sale = SalesImport.new(

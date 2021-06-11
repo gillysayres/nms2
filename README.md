@@ -26,19 +26,35 @@ After downloading this project, run `bundle install`. `yarn install`, `rails db:
 ## Development routine
 
 **Prepositions**
-As the challenge did not mention
+For this challenge, I assumed that the system would be an internal management system, where someone would enter to import sales informations.
 
 **June 9**
 
-   - Project created in Rails;
+  - Research on how to implement file processing;
+  - Research on how to implement oAuth;
+  - Initial setup
+  - Generated rails app
+  - Generated models
+  - Devise install
+  - Created routes
+  - Created views
 
 **June 10**
 
-   - controller;
+  - Bug fixing;
+  - Made the front nicer
+  - Rspec unit tests
 
-   **Missing in this project**
+**June 10**
 
-   - Conclusion
-   - Validations
-   - System tests
+  - Readme file
 
+**Missing in this project**
+
+  - System tests
+
+**Dificulties**
+
+  - I had a few problems with the importation, but managed after checking some GoRails tutorials
+  - I tried implementing oAuth, but it did not work as I expected, so I left it out
+  - I could not implement system tests with Rspec
